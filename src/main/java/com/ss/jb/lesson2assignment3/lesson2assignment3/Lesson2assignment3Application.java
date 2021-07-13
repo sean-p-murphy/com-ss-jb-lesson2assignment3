@@ -1,7 +1,7 @@
 package com.ss.jb.lesson2assignment3.lesson2assignment3;
 
 interface Shape {
-	public void calculateArea();
+	public double calculateArea();
 	public void display();
 };
 
@@ -14,12 +14,12 @@ class Triangle implements Shape {
 		height = h;
 	};
 
-	public void calculateArea() {
-		System.out.println("Triangle area is : " + 0.5 * base * height);
+	public double calculateArea() {
+		return 0.5 * base * height;
 	};
 
 	public void display() {
-		System.out.println("This is a triangle : △");
+		System.out.println("The area if the Triangle is " + this.calculateArea() + ".");
 	};
 
 };
@@ -33,12 +33,12 @@ class Rectangle implements Shape {
 		length = l;
 	};
 
-	public void calculateArea() {
-		System.out.println("Rectangle area is " + height * length);
+	public double calculateArea() {
+		return height * length;
 	};
 
 	public void display() {
-		System.out.println("This is a rectangle : ▢");
+		System.out.println("The area of the Rectangle is " + this.calculateArea() + ".");
 	};
 
 };
@@ -51,13 +51,13 @@ class Circle implements Shape {
 		diameter = d;
 	};
 
-	public void calculateArea() {
-		double exponent = Math.pow(diameter / 2,2);
-		System.out.println("Circle area is : " + pi * exponent);
+	public double calculateArea() {
+		double first = Math.pow(diameter / 2,2);
+		return first * pi;
 	};
 
 	public void display() {
-		System.out.println("This is a circle : ◯");
+		System.out.println("The area of the Circle is " + this.calculateArea() + ".");
 	};
 
 };
@@ -68,11 +68,8 @@ public class Lesson2assignment3Application {
 		Triangle myTriangle = new Triangle(8,4);
 		Rectangle myRectangle = new Rectangle(7,5);
 		Circle myCircle = new Circle(6);
-		myTriangle.calculateArea();
 		myTriangle.display();
-		myRectangle.calculateArea();
 		myRectangle.display();
-		myCircle.calculateArea();
 		myCircle.display();
 	};
 
